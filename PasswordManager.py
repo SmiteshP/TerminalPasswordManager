@@ -10,6 +10,11 @@ Working explained:
 Each user gets a .txt file created in their name in the format UserName.txt and are stored in directory where this script resides.
 sha512 is used to hash and store a 'MasterPassword' in the first line of the UserName.txt file.
 Data that user wishes to store is encryted using Ceasar Cipher and stored in subsiquent lines of UserName.txt
+
+Known Bugs:
+
+Code won't work is this file is stored in a git repo
+	cause- weird output of os.walk() in checkUserName()
 '''
 
 from hashlib import sha512
@@ -85,12 +90,12 @@ def checkUserName(UserName):
 		return 2
 
 	path = os.getcwd()
-	UserName = UserName + '.txt'
+	fileName = UserName + '.txt'
 
 	for _, _, files in os.walk(path):
 		pass
 
-	UserNameExist = 1 if UserName in files else 0
+	UserNameExist = 1 if fileName in files else 0
 
 	return UserNameExist
 
