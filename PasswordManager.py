@@ -13,7 +13,7 @@ Data that user wishes to store is encryted using Ceasar Cipher and stored in sub
 
 Known Bugs:
 
-Code won't work is this file is stored in a git repo
+Code won't work when this file is stored in a git repo
 	cause- weird output of os.walk() in checkUserName()
 '''
 
